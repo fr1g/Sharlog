@@ -14,9 +14,7 @@
 
 ##### 正在进行 / in progress：
 
-- Razor Page - Sharstaller 安装器（Sharlog Installer）
-- 熟悉SQL Server之于ASP.NET Core / Learning SQL Server of ASP.NET Core
-- 调整习惯 / Adjusting myself
+- 最小可用版本：实现一个博客该有的东西，包括管理后台。
 
 
 
