@@ -1,0 +1,21 @@
+﻿@page "/Components/Public/ArticleItem/{articleId}"
+@* Using Article ID, will let this component know which article to find *@
+
+<div id="@RootDOMID">
+
+</div>
+
+@code {
+    [Parameter]
+    public string articleId { get; set; } = "unset";
+
+    string RootDOMID = "unset";
+
+    protected override void OnInitialized()
+    {
+        RootDOMID = $"ArticleItem:{articleId}";
+        base.OnInitialized();
+    }
+
+}
+

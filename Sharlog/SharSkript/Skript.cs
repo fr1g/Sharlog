@@ -9,10 +9,12 @@
         private FileInfo _sk;
         private Compiler _compiler;
 
+        public Dictionary<string, object>? localVariables = new();
         public Dictionary<int, string>? EachSentence; // int: the level of spacing; string: inner command that this line of skript will execute.
 
         public void RunCompile() 
         {
+            
             EachSentence = new Dictionary<int, string>();
             var contents = this.SkriptContent.Split('\n');
             foreach (string sk in contents) 
@@ -30,9 +32,9 @@
         }
         public Skript(FileInfo sk, Compiler c)
         {
-            if (!sk.Name.Split(".")[(sk.Name.Split(".").Length) - 1].Equals("sk"))
+            if (!sk.Name.Split(".")[(sk.Name.Split(".").Length) - 1].Equals("sk") || sk.Name.StartsWith("--"))
             {
-                return;
+                return; // this may prevent while found this file.
             }
             _sk = sk;
             _compiler = c;
@@ -42,7 +44,11 @@
             {
                 while (!sr.EndOfStream) 
                 {
-                    this.SkriptContent += sr.ReadLine();
+                    string? line = sr.ReadLine();
+                    if (line is null) continue;
+                    else if (line.Contains("@Description")) this.SkriptDesc = line;
+                    else this.SkriptDesc = "No Description";
+                    this.SkriptContent += line;
                 }
                 sr.Close();
             }

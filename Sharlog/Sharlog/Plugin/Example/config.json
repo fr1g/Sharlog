@@ -1,0 +1,9 @@
+{
+  "PluginName": "Example Plugin",
+  "PluginType": "Full",
+  "PluginInfo": "An Example Plugin with Assembly for Enhaced themeing and functioning, Skript for Easy back-end scripting, Storage for content storing, assets for assets and index.html for Easy Themeing.",
+  "PluginAuthor": "Feiron Iguista",
+  "PluginVersion": "alpha 1.0",
+  "PluginAssetsPath": "assets",
+  "PluginJsonPaths": [ "config.json" ]
+}

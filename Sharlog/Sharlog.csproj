@@ -13,6 +13,10 @@
     <None Remove="Models\" />
     <None Remove="Services\" />
     <None Remove="Implements\" />
+    <None Remove="Components\" />
+    <None Remove="Components\Public\" />
+    <None Remove="Helpers\" />
+    <None Remove="I18N\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -30,6 +34,7 @@
     <PackageReference Include="MudBlazor" Version="6.10.0" />
     <PackageReference Include="MudBlazor.ThemeManager" Version="1.0.8" />
     <PackageReference Include="MudBlazor.Markdown" Version="0.1.2" />
+    <PackageReference Include="StringMath" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +42,10 @@
     <Folder Include="Services\" />
     <Folder Include="Implements\" />
     <Folder Include="wwwroot\Plugins\" />
+    <Folder Include="Components\" />
+    <Folder Include="Components\Public\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="I18N\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\Plugins\" />

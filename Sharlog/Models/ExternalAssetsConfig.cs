@@ -5,7 +5,7 @@ namespace Sharlog.Models
 	public class ExternalAssetsConfig : IRefreshableConfigs // singleton on startup
 	{
 
-		protected Dictionary<string, PluginConfig> PluginList;
+		public Dictionary<string, PluginConfig> PluginList;
 
 
 		public void Register(PluginConfig cfg) 

@@ -7,21 +7,24 @@ namespace Sharlog.Models
 		public string BlogKeyWords { get; set; } = "Sharlog.NET";
 		public string BlogDescriptions { get; set; } = "Share Everything";
 		public string BlogSEO { get; set; } = "Personal-Blog, Sharlog";
-		public string BlogContactEmail { get; set; }
+		public string? BlogContactEmail { get; set; }
 		public string BlogHostName { get; set; } = "shar-log.net";
-		public string BlogPageTitle { get; set; }
-		public string Blog { get; set; } // ?
+		public string BlogPageTitle { get; set; } = "Sharlog Blog Engine";
+		public string? Blog { get; set; } // ?
 		public string BlogMainPageRedirect { get; set; } = "/";
 		public string? BlogDatabase { get; set; }
-		//public string[]? Plugins { get; set; }
-/*
- NOTE::
-  1. about theme overriding and injection of plugin UI:
-  2. about applying configurations
 
- 
- */
-		public BasicConfigs()
+		public bool? EnableTailwindCSS { get; set; }
+		public bool? BlockMudBlazor { get; set; }
+        //public string[]? Plugins { get; set; }
+        /*
+         NOTE::
+          1. about theme overriding and injection of plugin UI:
+          2. about applying configurations
+
+
+         */
+        public BasicConfigs()
 		{
 		}
 	}
