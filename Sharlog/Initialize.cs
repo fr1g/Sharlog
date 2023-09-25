@@ -42,6 +42,7 @@ namespace Sharlog
                             }
                             sr.Close();
                         }
+                        Console.WriteLine(pluginJson);
                         PluginConfig? plugin = JsonSerializer.Deserialize<PluginConfig>(pluginJson); // NEED TEST
                         if (plugin is null) throw new Exception(); // ?
 

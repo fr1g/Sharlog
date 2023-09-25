@@ -16,16 +16,20 @@ namespace Sharlog.Models
 
         public DirectoryInfo? PluginDirInfo { get; set; }
 
-        public PluginConfig(string name, string? type, string? info, string? author, string path, string[]? jpath, string ver = "1") 
+        public PluginConfig CreatePluginConfig(string name, string? type, string? info, string? author, string path, string[]? jpath, string ver = "1")
         {
-            this.PluginName = name;
-            this.PluginType = type; 
-            this.PluginInfo = info;
-            this.PluginAuthor = author;
-            this.PluginVersion = ver;
-            this.PluginAssetsPath = path;
-            this.PluginJsonPath = jpath;
+            return new PluginConfig {
+                PluginName = name,
+                PluginType = type,
+                PluginInfo = info,
+                PluginAuthor = author,
+                PluginVersion = ver,
+                PluginAssetsPath = path,
+                PluginJsonPath = jpath,
+            };
         }
+
+        // 插件配置应该存在数据库的！！！！！！json提供默认值！！！！！刷新的原理是把内存中旧的引用使用存入数据库的新配置覆盖！！！！
         public bool? Reload()
         {
             //  read dedicated json to here and overwrite this.ReadableConfig

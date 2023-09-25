@@ -8,6 +8,7 @@ Initialize.A();
 
 var _basic = new BasicConfigs();
 var _settings = new SettingsTools();
+var _plugget = new PluginGetter();
 
 var localDir = new DirectoryInfo("./Sharlog");
 if (!localDir.Exists)
@@ -20,6 +21,7 @@ if (!localDir.Exists)
 
 }
 
+_plugget.GetPlugins();
 
 AssemblyLoadContext.Default.Resolving += (context, name) =>
 {
